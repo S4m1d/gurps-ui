@@ -1,4 +1,4 @@
-package ru.s4m1d.gurps.launcher;
+package main;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

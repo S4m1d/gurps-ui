@@ -5,8 +5,8 @@ import sun.net.www.http.HttpClient;
 
 import java.net.URL;
 
-public class UiMain {
-    public static void main(String[] args) throws Exception {
+public class UiLauncher {
+    public static void launch() throws Exception {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setup();
     }

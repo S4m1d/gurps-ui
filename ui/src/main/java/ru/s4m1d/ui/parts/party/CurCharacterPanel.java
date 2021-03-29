@@ -1,7 +1,7 @@
 package ru.s4m1d.ui.parts.party;
 
-import org.springframework.stereotype.Component;
 import ru.s4m1d.gurps.datamodel.CharacterDTO;
+import ru.s4m1d.system.services.CharacterService;
 import ru.s4m1d.ui.api.SPanelWithImage;
 import ru.s4m1d.ui.util.ComponentUtils;
 import ru.s4m1d.ui.util.FileConstants;
@@ -20,15 +20,7 @@ public class CurCharacterPanel extends SPanelWithImage {
 
     public CurCharacterPanel(String img) throws IOException {
         super();
-        characterDTO = new CharacterDTO(
-                "Arnold Swanson",
-                "archer-man.jpg",
-                "",
-                9,
-                13,
-                12,
-                9
-        );
+        characterDTO = CharacterService.getCharacter(2);
         backgroundImage = ImageIO.read(Paths
                 .get(FileConstants.IMAGES)
                 .resolve(characterDTO.getImageName())
@@ -46,11 +38,13 @@ public class CurCharacterPanel extends SPanelWithImage {
     }
     public void setContent(){
         JPanel jPanel = new JPanel();
-        jPanel.setLayout(new GridLayout(2,1,0,0));
+        jPanel.setLayout(new GridLayout(5,1,0,0));
         jPanel.setBackground(new Color(0,0,0,0));
-        jPanel.setForeground(Color.WHITE);
-        jPanel.add(new JLabel(characterDTO.getCharacterName()));
-        jPanel.add(new JLabel(String.valueOf(characterDTO.getStrength())));
+        jPanel.add(new ScratchWhiteTextLabel(characterDTO.getCharacterName()));
+        jPanel.add(new ScratchWhiteTextLabel("ST:"+String.valueOf(characterDTO.getStrength())));
+        jPanel.add(new ScratchWhiteTextLabel("DX:"+String.valueOf(characterDTO.getDexterity())));
+        jPanel.add(new ScratchWhiteTextLabel("IQ:"+String.valueOf(characterDTO.getIq())));
+        jPanel.add(new ScratchWhiteTextLabel("HT:"+String.valueOf(characterDTO.getHealth())));
         add(jPanel);
     }
 

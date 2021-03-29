@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>gurps-ui</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>ru.s4m1d</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>ru.s4m1d</groupId>
     <artifactId>ui</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -20,8 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>ru.s4m1d.gurps</groupId>
-            <artifactId>datamodel</artifactId>
+            <groupId>ru.s4m1d</groupId>
+            <artifactId>system</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
